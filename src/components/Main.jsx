@@ -1,43 +1,17 @@
 import React, { useState } from "react";
 import dummyContacts from "../dummyData";
+import ContactList from "./ContactList";
 
 const Main = (props) => {
-  const [contacts, setContacts] = useState(dummyContacts);
-  console.log(contacts)
+  const [contacts, setContacts] = useState([]);
+  console.log(contacts);
   return (
     <div id="main">
       <div id="navbar">
         <div>Contact List</div>
-        
       </div>
       <div id="container">
-    
-          <table>
-            <tbody>
-              <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-              </tr>
-
-              {contacts.map((contact) => {
-            return 
-          
-              <tr>
-                <td>{contact.name}</td>
-                <td>{contact.phone}</td>
-                <td>{contact.email}</td>
-              </tr>
-             })} 
-              {/* Contact 2 */}
-              <tr>
-                <td>Person Two</td>
-                <td>111-111-1111</td>
-                <td>two@email.com</td>
-              </tr>
-            </tbody>
-          </table>
-        
+        <ContactList contacts={contacts} />
       </div>
     </div>
   );
